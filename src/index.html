@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+	.contact-info{
+		background-color: #fff;
+		border: 5px solid black;
+		border-radius: 3px;
+		min-height: 250px;
+		margin-top: 20%;
+		opacity: 1;
+	}
+
+	.hidden{
+		display: none;
+	}
+	
+	.grey-background{
+		background-color: rgba(46, 49, 49,0.7);
+		position:fixed !important;
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0
+	}
+	
+	.fa-times{
+		padding-left: 5px;
+		padding-top: 5px;
+		text-align: right;
+	}
+	
+	.fa-times:hover{
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+
+	<div id="contact-list-page" class="grey-background hidden">
+		<div id="contact-info-container" class="container contact-info hidden">
+		<div class="row">
+			<h3 class="text-center col-sm-11"> Contact Information </h3>
+			<i class="fa fa-times col-sm-1 text-danger" id="close-contact"></i>
+		</div>
+		<hr>
+		</div>
+	</div>
+	
+	<h1 class="text-center"> Contact List </h1>
+	<br>
+	
+	<div class="fluid-container">
+		<div class="container">
+			<h2 class="text-center">Address Book</h2>
+			<br>
+			
+			<table class="table table-striped" id="contacts-table">
+				<thead class="thead-light">
+					<tr id="contacts-head">
+						<th>Contact ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				</tbody>
+			</table>
+		</div>
+		
+		<hr>
+		
+		<div>
+			<h3 class="text-center">Add New Contact</h3>
+			<form class="container" id="contacts-form">
+				<div class="form-group">
+				<label for="first-name">First Name</label>
+				<input type="text" class="form-control" name="firstName" id="first-name" placeholder="First Name">
+				</div>
+				
+				<div class="form-group">
+				<label for="last-name">Last Name</label>
+				<input type="text" class="form-control" name="lastName" id="last-name" placeholder="Last Name">
+				</div>
+				
+				<div class="form-group">
+				<label for="email-address">Email address</label>
+				<input type="email" class="form-control" name="emailAddress" id="email-address" aria-describedby="emailHelp" placeholder="Enter email">
+				<small id="emailHelp" class="form-text text-muted">We'll never share your personal details with anyone else.</small>
+				</div>
+				
+				<button type="button" id="discard-button"  class="btn btn-danger btn-block" value="clear">Clear Fields</button>
+				
+				<button type="submit" id="save-button" class="btn btn-primary btn-block" value="save">Save</button>
+				
+				<input type="hidden" name="id_entry" value="0" />
+			</form>
+			
+		</div>
+	</div>
+
+
+	<script src="address-v2.js"></script>
+	
+</body>
+
+</html>
